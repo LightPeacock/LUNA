@@ -1,0 +1,81 @@
+Smart Assistance for Guidence and efficiency
+packages to install:
+  
+  -speechrecognition /(done)
+ 
+  -webbrowser(to open websites)(done)
+  -webdriver (sign in instagram) (to be done)
+  -os (almost all tasks done )
+  above are cwh packages
+  -pyttsx3 /(done)
+  
+Functions
+-wake up -
+-greet -
+-introduce yourself -
+-openai tasks (i need to buy open ai subscription)
+-access all my codes
+-opening websites -
+-control system volumes
+-send messages -
+-call
+-access phone 
+-system app openers(os) -(need to add more)
+-import functions from my codes
+-play song in youtube
+
+
+twilio recovery code: J2K1WEXKAX1VCCQBRKF28TCD
+
+
+
+-Sage.py
+-LinearRegression
+  -__init__.py
+  -LinearRegression.py 
+
+create packages like this for all the modules
+create class in LinearRegression.py and not direct code.
+
+
+
+
+
+ elif "whatsapp message".lower() in query.lower():
+                    from twilio.rest import Client
+                    account_sid = 'AC7b0fb4f130ebf81ebbf3e7b48abd4d34'
+                    auth_token = '3b97d52127c9fbfb8b17d9ea840fca69'
+                    client = Client(account_sid, auth_token)
+                    speak("Whom should i send message, sir")
+                    recieve_num = takecommand().lower()
+                    
+                    for num in nums:
+                        if f"{num[0]}".lower() in recieve_num.lower():
+                            recieve_num = num[1]
+                    speak("what is the message sir?")
+                    msg = takecommand().lower()
+
+                    # message = client.messages.create(
+                    #         from_='whatsapp:+919867629595',
+                    # body=f'{msg}',
+                    to=f'whatsapp:+91{recieve_num}'
+                        # )
+                    pywhatkit.sendwhatmsg_instantly(to,msg)
+                    speak("Message sent!!")
+
+                elif "Play on youtube".lower() in query.lower():
+                    speak("which song should i play?")
+                    cm = takecommand().lower()
+                    pywhatkit.playonyt(f"{cm}")
+
+                        elif "in wikipedia".lower() in query.lower():
+                    speak("Searching wikipedia for results!!")
+                    query = query.replace("wikipedia","")
+                    results = wikipedia.summary(query,sentence=1)
+                    speak(results)
+
+                elif "google search".lower() in query.lower():
+                    # webbrowser.open("ww.google.com")
+                    speak("What should i search, sir!")
+                    cm = takecommand().lower()
+                    webbrowser.open(f"{cm}")
